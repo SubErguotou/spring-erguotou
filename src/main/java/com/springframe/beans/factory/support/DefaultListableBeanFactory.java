@@ -7,6 +7,7 @@ import java.util.Map;
 
 public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFactory implements BeanDefinitionRegistry{
 
+//    BeanDefinition(Bean定义信息池)池
     private Map<String, BeanDefinition> beanDefinitionMap = new HashMap<>();
 
 
