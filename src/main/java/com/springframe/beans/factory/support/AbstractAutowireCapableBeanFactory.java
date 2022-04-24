@@ -4,6 +4,9 @@ import com.springframe.BeansException;
 import com.springframe.beans.factory.config.BeanDefinition;
 
 public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory{
+
+    private InstantiationStrategy instantiationStrategy = new SimpleInstantiationStrategy();
+
     @Override
     protected Object creatBean(String BeanName, BeanDefinition beanDefinition) {
         return doCreateBean(BeanName, beanDefinition);
@@ -15,8 +18,8 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
         Class beanClass = beanDefinition.getBeanClass();
         Object bean = null;
         try {
-//            利用反射创建bena
-            bean = beanClass.newInstance();
+//            创建bean实例
+            bean = creatBeanInstantiation(beanDefinition);
         } catch (Exception e) {
             throw new BeansException("newInstance创建bean失败", e);
         }
@@ -24,5 +27,15 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
         addSingletonBean(BeanName, bean);
         return bean;
     }
+    protected Object creatBeanInstantiation(BeanDefinition beanDefinition){
+        return instantiationStrategy.instantiate(beanDefinition);
+    }
 
+
+    protected InstantiationStrategy getInstantiationStrategy() {
+        return instantiationStrategy;
+    }
+    protected void setInstantiationStrategy(InstantiationStrategy instantiationStrategy) {
+        this.instantiationStrategy = instantiationStrategy;
+    }
 }
