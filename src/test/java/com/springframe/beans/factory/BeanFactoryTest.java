@@ -1,6 +1,7 @@
 package com.springframe.beans.factory;
 
 
+import com.springframe.beans.factory.beans.Youkino;
 import com.springframe.beans.factory.config.BeanDefinition;
 import com.springframe.beans.factory.support.DefaultListableBeanFactory;
 import org.junit.Test;

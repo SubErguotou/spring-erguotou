@@ -1,6 +1,8 @@
 package com.springframe.beans.factory.support;
 
+import cn.hutool.core.bean.BeanUtil;
 import com.springframe.BeansException;
+import com.springframe.beans.factory.PropertyValue;
 import com.springframe.beans.factory.config.BeanDefinition;
 
 public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory{
@@ -20,6 +22,8 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
         try {
 //            创建bean实例
             bean = creatBeanInstantiation(beanDefinition);
+//            为创建好的bean添加属性
+            addPropertyValues(BeanName, bean, beanDefinition);
         } catch (Exception e) {
             throw new BeansException("newInstance创建bean失败", e);
         }
@@ -29,6 +33,19 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
     }
     protected Object creatBeanInstantiation(BeanDefinition beanDefinition){
         return instantiationStrategy.instantiate(beanDefinition);
+    }
+
+    protected void addPropertyValues(String BeanName, Object bean, BeanDefinition beanDefinition){
+        try {
+            for (PropertyValue propertyValue : beanDefinition.getPropertyValues().getPropertyValues()){
+                String name = propertyValue.getName();
+                Object value = propertyValue.getValue();
+//            通过反射为bean设置属性
+                BeanUtil.setFieldValue(bean, name, value);
+            }
+        } catch (Exception e){
+            new BeansException(BeanName + "设置属性错误 ", e);
+        }
     }
 
 
