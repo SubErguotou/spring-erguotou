@@ -4,6 +4,7 @@ import cn.hutool.core.bean.BeanUtil;
 import com.springframe.BeansException;
 import com.springframe.beans.factory.PropertyValue;
 import com.springframe.beans.factory.config.BeanDefinition;
+import com.springframe.beans.factory.config.BeanReference;
 
 public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory{
 
@@ -40,7 +41,12 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
             for (PropertyValue propertyValue : beanDefinition.getPropertyValues().getPropertyValues()){
                 String name = propertyValue.getName();
                 Object value = propertyValue.getValue();
-//                System.out.println(name+": " +value);
+//                如果bean的value值时BeanReference，则先实例化bean的依赖对象
+                if (value instanceof BeanReference){
+                    BeanReference beanReference = (BeanReference) value;
+                    value = getBean(beanReference.getBeanName());
+                }
+
                 //通过反射设置属性, 为bean实例里name的属性设置vlaue，相同的name会被后来的name值覆盖
                 BeanUtil.setFieldValue(bean, name, value);
             }

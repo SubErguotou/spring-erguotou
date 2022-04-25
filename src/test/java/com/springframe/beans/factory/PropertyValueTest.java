@@ -80,6 +80,5 @@ public class PropertyValueTest {
         System.out.println(youkino.getName());
         System.out.println(youkino.getAge());
 
-
     }
 }
