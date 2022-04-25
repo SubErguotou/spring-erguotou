@@ -7,7 +7,7 @@ import java.util.List;
  * 存储bean的所有属性
  */
 public class PropertyValues {
-//    保存bean的所有属性值
+//    保存bean的所有属性值(属性池)
     private final List<PropertyValue> propertyValues = new ArrayList<>();
 
 //    添加属性
@@ -16,6 +16,7 @@ public class PropertyValues {
     }
 //    获得所有属性值
     public PropertyValue[] getPropertyValues() {
+//
         return this.propertyValues.toArray(new PropertyValue[0]);
     }
 //    获得指定属性
@@ -28,7 +29,4 @@ public class PropertyValues {
         }
         return null;
     }
-
-
-
 }

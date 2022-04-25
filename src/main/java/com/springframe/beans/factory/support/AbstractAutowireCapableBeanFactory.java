@@ -40,7 +40,8 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
             for (PropertyValue propertyValue : beanDefinition.getPropertyValues().getPropertyValues()){
                 String name = propertyValue.getName();
                 Object value = propertyValue.getValue();
-//            通过反射为bean设置属性
+//                System.out.println(name+": " +value);
+                //通过反射设置属性, 为bean实例里name的属性设置vlaue，相同的name会被后来的name值覆盖
                 BeanUtil.setFieldValue(bean, name, value);
             }
         } catch (Exception e){

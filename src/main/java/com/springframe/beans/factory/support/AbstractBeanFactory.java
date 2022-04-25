@@ -9,15 +9,15 @@ import com.springframe.beans.factory.config.BeanDefinition;
 public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements BeanFactory {
 
     @Override
-    public Object getBean(String name) {
+    public Object getBean(String beanName) {
 //        检查池中是存在BeanDefinition
-        Object bean = getSingleton(name);
+        Object bean = getSingleton(beanName);
         if (bean != null){
             return bean;
         }
 //        没有则创建beanDefinition
-        BeanDefinition beanDefinition = getBeanDefinition(name);
-        return creatBean(name, beanDefinition);
+        BeanDefinition beanDefinition = getBeanDefinition(beanName);
+        return creatBean(beanName, beanDefinition);
     }
 //    创建单例bean
     protected abstract Object creatBean(String BeanName, BeanDefinition beanDefinition);

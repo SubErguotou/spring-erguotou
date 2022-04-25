@@ -8,7 +8,9 @@ import com.springframe.beans.factory.PropertyValues;
  */
 
 public class BeanDefinition {
+//    class类型
     private Class BeanClass;
+//    bean属性
     private PropertyValues propertyValues;
 
 
