@@ -9,7 +9,7 @@ import java.util.Map;
  * 默认单例bean注册表,实现添加单实例bean功能
  */
 public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
-//    单例池
+//    单例对象池
     private Map<String, Object> singletonBean = new HashMap<>();
 //   添加单例bean进单例池。
     public void addSingletonBean(String name, Object singletonObject){

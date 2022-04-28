@@ -6,6 +6,7 @@ import com.springframe.beans.config.BeanDefinition;
 import com.springframe.beans.PropertyValue;
 import com.springframe.beans.config.BeanReference;
 
+//自动装配能力的beanFactory
 public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory{
 
     private InstantiationStrategy instantiationStrategy = new SimpleInstantiationStrategy();

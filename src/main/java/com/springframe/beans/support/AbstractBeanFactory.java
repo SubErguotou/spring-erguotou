@@ -10,7 +10,7 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
 
     @Override
     public Object getBean(String beanName) {
-//        检查池中是存在BeanDefinition
+//        检查单例对象池中是存在BeanDefinition
         Object bean = getSingleton(beanName);
         if (bean != null){
             return bean;
