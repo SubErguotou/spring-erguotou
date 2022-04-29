@@ -28,7 +28,7 @@ public class XmlAbstractBeanDefinitionReader extends AbstractBeanDefinitionReade
     public static final String VALUE_ATTRIBUTE = "value";
     public static final String REF_ATTRIBUTE = "ref";
 
-    protected XmlAbstractBeanDefinitionReader(BeanDefinitionRegistry registry) {
+    public XmlAbstractBeanDefinitionReader(BeanDefinitionRegistry registry) {
         super(registry);
     }
 
@@ -55,7 +55,7 @@ public class XmlAbstractBeanDefinitionReader extends AbstractBeanDefinitionReade
             throw new BeansException("IOException parsing XML document from " + resource, ex);
         }
     }
-//    把读取到的资源流变成BeanDefinition，并注册到注册中心
+//    把读取到的资源流变成BeanDefinition，并注册到注册中心，xml主要的解析逻辑
     protected  void doLoadBeanDefinitions(InputStream inputStream){
         Document document = XmlUtil.readXML(inputStream);
         Element root = document.getDocumentElement();
@@ -105,6 +105,7 @@ public class XmlAbstractBeanDefinitionReader extends AbstractBeanDefinitionReade
                             }
                         }
                     }
+                    // 检测是否同名
                     if (getRegistry().containsBeanDefinition(beanName)) {
                         //beanName不能重名
                         throw new BeansException("Duplicate beanName[" + beanName + "] is not allowed");
