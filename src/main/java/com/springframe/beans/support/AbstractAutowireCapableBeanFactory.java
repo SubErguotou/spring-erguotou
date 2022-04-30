@@ -117,6 +117,6 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
         return instantiationStrategy;
     }
     protected void setInstantiationStrategy(InstantiationStrategy instantiationStrategy) {
-        this.instantiationStrategy = instantiationStrategy;
+        this.instantiationStrategy = instantiationStrategy; 
     }
 }
