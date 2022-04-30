@@ -1,7 +1,7 @@
 package com.springframe.beans.support;
 
-import com.springframe.beans.config.BeanDefinition;
 import com.springframe.beans.BeanFactory;
+import com.springframe.beans.config.BeanDefinition;
 
 /**
  * 实现了BeanFactory，继承了DefaultSingletonBeanRegistry

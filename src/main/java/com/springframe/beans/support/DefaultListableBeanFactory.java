@@ -11,7 +11,7 @@ import java.util.Set;
 public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFactory implements BeanDefinitionRegistry, ConfigurableListableBeanFactory {
 
 //    BeanDefinition(Bean定义信息池)池
-    private Map<String, BeanDefinition> beanDefinitionMap = new HashMap<>();
+    private final Map<String, BeanDefinition> beanDefinitionMap = new HashMap<>();
 
 
     @Override
@@ -31,7 +31,7 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
         beanDefinitionMap.keySet().forEach(this::getBean);
     }
 
-//    检测是否包含包含在bean的定义信息池中
+//    检测是否包含包含在bean的定义信息池中getBeanDefinitionNames
     @Override
     public boolean containsBeanDefinition(String beanName) {
         return beanDefinitionMap.containsKey(beanName);

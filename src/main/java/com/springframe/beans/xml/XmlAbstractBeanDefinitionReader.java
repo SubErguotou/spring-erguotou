@@ -4,9 +4,9 @@ import cn.hutool.core.bean.BeanException;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.core.util.XmlUtil;
 import com.springframe.BeansException;
+import com.springframe.beans.config.BeanReference;
 import com.springframe.beans.PropertyValue;
 import com.springframe.beans.config.BeanDefinition;
-import com.springframe.beans.config.BeanReference;
 import com.springframe.beans.support.AbstractBeanDefinitionReader;
 import com.springframe.beans.support.BeanDefinitionRegistry;
 import com.springframe.core.io.Resource;
@@ -68,7 +68,7 @@ public class XmlAbstractBeanDefinitionReader extends AbstractBeanDefinitionReade
                     Element bean = (Element) childNodes.item(i);
                     String id = bean.getAttribute(ID_ATTRIBUTE);
                     String name = bean.getAttribute(NAME_ATTRIBUTE);
-                    String className = bean.getAttribute(NAME_ATTRIBUTE);
+                    String className = bean.getAttribute(CLASS_ATTRIBUTE);
 
                     Class<?> clazz = null;
                     try {
@@ -100,7 +100,7 @@ public class XmlAbstractBeanDefinitionReader extends AbstractBeanDefinitionReade
                                 if (StrUtil.isNotEmpty(refAttribute)){
                                     value = new BeanReference(refAttribute);
                                 }
-                                PropertyValue propertyValue = new PropertyValue(name, value);
+                                PropertyValue propertyValue = new PropertyValue(nameAttribute, value);
                                 beanDefinition.getPropertyValues().addPropertyValue(propertyValue);
                             }
                         }

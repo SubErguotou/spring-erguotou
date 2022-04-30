@@ -3,8 +3,8 @@ package com.springframe.beans.support;
 import cn.hutool.core.bean.BeanUtil;
 import com.springframe.BeansException;
 import com.springframe.beans.config.BeanDefinition;
-import com.springframe.beans.PropertyValue;
 import com.springframe.beans.config.BeanReference;
+import com.springframe.beans.PropertyValue;
 
 //自动装配能力的beanFactory
 public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory{

@@ -1,9 +1,9 @@
 package com.springframe.beans;
 
 
-import com.springframe.beans.beans.Youkino;
 import com.springframe.beans.config.BeanDefinition;
 import com.springframe.beans.support.DefaultListableBeanFactory;
+import com.springframe.beans.beans.Youkino;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
