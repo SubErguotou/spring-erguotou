@@ -16,6 +16,5 @@ public class CustomBeanFactoryPostProcessor implements BeanFactoryPostProcessor 
         // 更改youkino的bean的定义信息中name属性的值
         PropertyValue propertyValue = new PropertyValue("name", "雪乃");
         propertyValues.addPropertyValue(propertyValue);
-
     }
 }
