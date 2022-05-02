@@ -1,8 +1,8 @@
-package com.springframe.beans.support;
+package com.springframe.beans.factory.support;
 
-import com.springframe.BeansException;
-import com.springframe.beans.ConfigurableListableBeanFactory;
-import com.springframe.beans.config.BeanDefinition;
+import com.springframe.beans.BeansException;
+import com.springframe.beans.factory.ConfigurableListableBeanFactory;
+import com.springframe.beans.factory.config.BeanDefinition;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -36,6 +36,7 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
     public boolean containsBeanDefinition(String beanName) {
         return beanDefinitionMap.containsKey(beanName);
     }
+
     // 获取某个类型实例化的所有对象
     @Override
     public <T> Map<String, T> getBeansOfType(Class<T> type) throws BeansException {
@@ -45,6 +46,7 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
             Class beanClass = beanDefinition.getBeanClass();
             // 判断是否是和传入的类型一致
             if (type.isAssignableFrom(beanClass)) {
+                // 实例化
                 T bean = (T) getBean(beanName);
                 result.put(beanName, bean);
             }

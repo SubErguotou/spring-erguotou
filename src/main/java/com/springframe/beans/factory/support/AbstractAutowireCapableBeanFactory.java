@@ -1,11 +1,11 @@
-package com.springframe.beans.support;
+package com.springframe.beans.factory.support;
 
 import cn.hutool.core.bean.BeanUtil;
-import com.springframe.BeansException;
-import com.springframe.beans.config.AutowriteCapableBeanFactory;
-import com.springframe.beans.config.BeanDefinition;
-import com.springframe.beans.config.BeanPostProcessor;
-import com.springframe.beans.config.BeanReference;
+import com.springframe.beans.BeansException;
+import com.springframe.beans.factory.config.AutowriteCapableBeanFactory;
+import com.springframe.beans.factory.config.BeanDefinition;
+import com.springframe.beans.factory.config.BeanPostProcessor;
+import com.springframe.beans.factory.config.BeanReference;
 import com.springframe.beans.PropertyValue;
 
 /**
@@ -66,7 +66,9 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 
     protected Object initializeBean(String beanName, Object bean, BeanDefinition beanDefinition){
         // 执行前置处理器
-        Object wrappedBean = applyBeanPostProcessorsBeforeInitialization(bean, beanName);
+        Object wrappedBean;
+        wrappedBean = applyBeanPostProcessorsBeforeInitialization(bean, beanName);
+
         invokeInitMethods(beanName, bean, beanDefinition);
         //后置处理器
         wrappedBean = applyBeanPostProcessorsAfterInitialization(bean, beanName);
@@ -117,6 +119,6 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
         return instantiationStrategy;
     }
     protected void setInstantiationStrategy(InstantiationStrategy instantiationStrategy) {
-        this.instantiationStrategy = instantiationStrategy; 
+        this.instantiationStrategy = instantiationStrategy;
     }
 }

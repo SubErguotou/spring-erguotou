@@ -1,11 +1,11 @@
 package com.springframe.beans.common;
 
 import cn.hutool.core.bean.BeanException;
-import com.springframe.beans.ConfigurableListableBeanFactory;
+import com.springframe.beans.factory.ConfigurableListableBeanFactory;
 import com.springframe.beans.PropertyValue;
 import com.springframe.beans.PropertyValues;
-import com.springframe.beans.config.BeanDefinition;
-import com.springframe.beans.config.BeanFactoryPostProcessor;
+import com.springframe.beans.factory.config.BeanDefinition;
+import com.springframe.beans.factory.config.BeanFactoryPostProcessor;
 
 public class CustomBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
     @Override

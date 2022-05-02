@@ -1,7 +1,5 @@
 package com.springframe.core.io;
 
-import com.springframe.BeansException;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;

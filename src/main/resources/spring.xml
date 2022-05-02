@@ -18,4 +18,7 @@
         <property name="tomoriNao" ref="tomoriNao" />
     </bean>
 
+    <bean class="com.springframe.beans.common.CustomBeanFactoryPostProcessor" />
+    <bean class="com.springframe.beans.common.CustomBeanPostProcessor" />
+
 </beans>

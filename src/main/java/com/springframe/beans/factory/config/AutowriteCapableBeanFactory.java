@@ -1,7 +1,7 @@
-package com.springframe.beans.config;
+package com.springframe.beans.factory.config;
 
-import com.springframe.BeansException;
-import com.springframe.beans.BeanFactory;
+import com.springframe.beans.BeansException;
+import com.springframe.beans.factory.BeanFactory;
 
 /**
  * 有自动装配能力的bean工厂，目前用来执行前后置处理器

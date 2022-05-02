@@ -1,7 +1,8 @@
-package com.springframe.beans;
+package com.springframe.beans.factory;
 
-import com.springframe.BeansException;
-import com.springframe.beans.config.BeanDefinition;
+import com.springframe.beans.BeansException;
+import com.springframe.beans.factory.config.BeanDefinition;
+import com.springframe.beans.factory.config.BeanPostProcessor;
 
 public interface ConfigurableListableBeanFactory extends ListableBeanFactory{
     /**
@@ -19,4 +20,9 @@ public interface ConfigurableListableBeanFactory extends ListableBeanFactory{
      * @throws BeansException
      */
     void preInstantiateSingletons() throws BeansException;
+
+    /**
+     * 添加前后置处理器
+     */
+    void addBeanPostProcessor(BeanPostProcessor beanPostProcessor);
 }

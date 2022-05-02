@@ -1,4 +1,4 @@
-package com.springframe.beans.config;
+package com.springframe.beans.factory.config;
 
 import com.springframe.beans.PropertyValues;
 

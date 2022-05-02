@@ -1,12 +1,10 @@
 package com.springframe.beans;
 
-import com.springframe.beans.support.DefaultListableBeanFactory;
-import com.springframe.beans.xml.XmlAbstractBeanDefinitionReader;
+import com.springframe.beans.factory.support.DefaultListableBeanFactory;
+import com.springframe.beans.factory.xml.XmlAbstractBeanDefinitionReader;
 import com.springframe.beans.beans.Youkino;
 import com.springframe.core.io.DefaultResourceLoader;
 import org.junit.Test;
-
-import java.io.IOException;
 
 public class XmlResourceLoaderTest {
 

@@ -1,7 +1,7 @@
-package com.springframe.beans.support;
+package com.springframe.beans.factory.support;
 
-import com.springframe.BeansException;
-import com.springframe.beans.config.BeanDefinition;
+import com.springframe.beans.BeansException;
+import com.springframe.beans.factory.config.BeanDefinition;
 
 /**
  * 定义注册bean的方法，bean的Name和信息注册

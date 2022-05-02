@@ -1,4 +1,4 @@
-package com.springframe.beans.config;
+package com.springframe.beans.factory.config;
 
 /**
  *一个bean对另一bean的引用

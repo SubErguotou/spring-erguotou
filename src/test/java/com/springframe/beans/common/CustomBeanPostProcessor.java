@@ -1,7 +1,7 @@
 package com.springframe.beans.common;
 
-import com.springframe.BeansException;
-import com.springframe.beans.config.BeanPostProcessor;
+import com.springframe.beans.BeansException;
+import com.springframe.beans.factory.config.BeanPostProcessor;
 
 public class CustomBeanPostProcessor implements BeanPostProcessor {
     //实例初始化前要做的操作

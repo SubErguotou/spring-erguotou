@@ -1,6 +1,6 @@
-package com.springframe.beans;
+package com.springframe.beans.factory;
 
-import com.springframe.BeansException;
+import com.springframe.beans.BeansException;
 
 import java.util.Map;
 

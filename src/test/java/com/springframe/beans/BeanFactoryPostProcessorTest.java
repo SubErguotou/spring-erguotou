@@ -4,8 +4,8 @@ import com.springframe.beans.beans.TomoriNao;
 import com.springframe.beans.beans.Youkino;
 import com.springframe.beans.common.CustomBeanFactoryPostProcessor;
 import com.springframe.beans.common.CustomBeanPostProcessor;
-import com.springframe.beans.support.DefaultListableBeanFactory;
-import com.springframe.beans.xml.XmlAbstractBeanDefinitionReader;
+import com.springframe.beans.factory.support.DefaultListableBeanFactory;
+import com.springframe.beans.factory.xml.XmlAbstractBeanDefinitionReader;
 import org.junit.Test;
 
 public class BeanFactoryPostProcessorTest {
@@ -30,7 +30,7 @@ public class BeanFactoryPostProcessorTest {
         xmlAbstractBeanDefinitionReader.LoadBeanDefinitions("classpath:spring.xml");
 
         CustomBeanPostProcessor customBeanPostProcessor = new CustomBeanPostProcessor();
-        beanFactory.addPostProcessor(customBeanPostProcessor);
+        beanFactory.addBeanPostProcessor(customBeanPostProcessor);
 
         TomoriNao tomoriNao = (TomoriNao)beanFactory.getBean("tomoriNao");
         System.out.println(tomoriNao.getName());

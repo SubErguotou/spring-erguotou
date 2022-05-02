@@ -1,4 +1,4 @@
-package com.springframe;
+package com.springframe.beans;
 
 public class BeansException extends RuntimeException {
 

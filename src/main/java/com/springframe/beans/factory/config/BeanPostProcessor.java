@@ -1,6 +1,6 @@
-package com.springframe.beans.config;
+package com.springframe.beans.factory.config;
 
-import com.springframe.BeansException;
+import com.springframe.beans.BeansException;
 
 /**
  * 用于修改实例化bena的扩展点，（前后置处理器）

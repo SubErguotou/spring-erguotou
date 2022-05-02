@@ -1,6 +1,6 @@
-package com.springframe.beans.support;
+package com.springframe.beans.factory.support;
 
-import com.springframe.beans.config.BeanDefinition;
+import com.springframe.beans.factory.config.BeanDefinition;
 
 
 public class CglibSubclassingInstantiationStrategy implements InstantiationStrategy{

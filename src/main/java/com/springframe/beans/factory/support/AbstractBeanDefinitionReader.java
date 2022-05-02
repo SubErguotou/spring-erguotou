@@ -1,4 +1,4 @@
-package com.springframe.beans.support;
+package com.springframe.beans.factory.support;
 
 import cn.hutool.core.bean.BeanException;
 import com.springframe.core.io.DefaultResourceLoader;

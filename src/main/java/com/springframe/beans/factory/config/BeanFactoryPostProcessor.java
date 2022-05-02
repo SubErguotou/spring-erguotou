@@ -1,7 +1,7 @@
-package com.springframe.beans.config;
+package com.springframe.beans.factory.config;
 
 import cn.hutool.core.bean.BeanException;
-import com.springframe.beans.ConfigurableListableBeanFactory;
+import com.springframe.beans.factory.ConfigurableListableBeanFactory;
 
 /**
  * 允许自定义修改bean的属性

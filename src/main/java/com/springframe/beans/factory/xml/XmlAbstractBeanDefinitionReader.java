@@ -1,14 +1,14 @@
-package com.springframe.beans.xml;
+package com.springframe.beans.factory.xml;
 
 import cn.hutool.core.bean.BeanException;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.core.util.XmlUtil;
-import com.springframe.BeansException;
-import com.springframe.beans.config.BeanReference;
+import com.springframe.beans.BeansException;
+import com.springframe.beans.factory.config.BeanReference;
 import com.springframe.beans.PropertyValue;
-import com.springframe.beans.config.BeanDefinition;
-import com.springframe.beans.support.AbstractBeanDefinitionReader;
-import com.springframe.beans.support.BeanDefinitionRegistry;
+import com.springframe.beans.factory.config.BeanDefinition;
+import com.springframe.beans.factory.support.AbstractBeanDefinitionReader;
+import com.springframe.beans.factory.support.BeanDefinitionRegistry;
 import com.springframe.core.io.Resource;
 import com.springframe.core.io.ResourceLoader;
 import org.w3c.dom.Document;
