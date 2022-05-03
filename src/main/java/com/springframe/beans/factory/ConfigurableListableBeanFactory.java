@@ -1,10 +1,12 @@
 package com.springframe.beans.factory;
 
 import com.springframe.beans.BeansException;
+import com.springframe.beans.factory.config.AutowriteCapableBeanFactory;
 import com.springframe.beans.factory.config.BeanDefinition;
 import com.springframe.beans.factory.config.BeanPostProcessor;
+import com.springframe.beans.factory.config.ConfigurableBeanFactory;
 
-public interface ConfigurableListableBeanFactory extends ListableBeanFactory{
+public interface ConfigurableListableBeanFactory extends ListableBeanFactory, AutowriteCapableBeanFactory, ConfigurableBeanFactory {
     /**
      * 根据名称查找BeanDefinition
      *

@@ -9,7 +9,7 @@ public class ApplicationContextTest {
     @Test
     public void TestApplicationContext(){
         ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("classpath:spring.xml");
-        TomoriNao tomoriNao = classPathXmlApplicationContext.getBean("tomoriNao", TomoriNao.class);
-        System.out.println(tomoriNao.getName());
+//        TomoriNao tomoriNao = classPathXmlApplicationContext.getBean("tomoriNao", TomoriNao.class);
+//        System.out.println(tomoriNao.getName());
     }
 }

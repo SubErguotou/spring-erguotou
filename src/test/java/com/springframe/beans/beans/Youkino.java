@@ -1,14 +1,17 @@
 package com.springframe.beans.beans;
 
+import com.springframe.beans.factory.InitializingBean;
+
 public class Youkino {
     private String name;
     private int age;
 //    Youkino依赖TomoriNao
     private TomoriNao tomoriNao;
 
-    public void getInfo(){
-        System.out.println("Youkino的getInfo方法");
-    }
+//    public void getInfo(){
+//        System.out.println("Youkino的getInfo方法");
+//    }
+
 
     public String getName() {
         return name;
@@ -33,4 +36,5 @@ public class Youkino {
     public void setTomoriNao(TomoriNao tomoriNao) {
         this.tomoriNao = tomoriNao;
     }
+
 }

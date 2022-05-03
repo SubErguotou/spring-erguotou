@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	         http://www.springframework.org/schema/beans/spring-beans.xsd
+		 http://www.springframework.org/schema/context
+		 http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <bean id="tomoriNao" class="com.springframe.beans.beans.TomoriNao" init-method="customInitMethod" destroy-method="customDestroyMethod">
+        <property name="name" value="友利奈绪"/>
+        <property name="age" value="18"/>
+    </bean>
+
+    <bean id="youkino" class="com.springframe.beans.beans.Youkino">
+        <property name="name" value="雪之下雪乃"/>
+        <property name="age" value="17" />
+        <property name="tomoriNao" ref="tomoriNao" />
+    </bean>
+
+</beans>

@@ -21,7 +21,7 @@ public class BeanFactoryTest {
 //        获得bean
         Youkino youkino = (Youkino)beanFactory.getBean("Youkino");
 
-        youkino.getInfo();
+//        youkino.getInfo();
     }
 
 }
